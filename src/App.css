@@ -1,38 +1,156 @@
-.App {
-  text-align: center;
+/* Notes display */
+#cardcontainer {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    overflow: hidden;
+    position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#cardcontainer:hover {
+    box-shadow: 0 0 20px rgba(255, 123, 0, 0.3);
+    transform: rotate(2deg);
+    transform: scale(1.1);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#cardcontainer:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #ff7300, #dc2b72);
+    opacity: 0.8;
+    z-index: -1;
+    transform: scale(1.5);
+    transition: transform 0.3s ease-in-out;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#cardcontainer:hover:before {
+    transform: scale(1.6);
 }
 
-.App-link {
-  color: #61dafb;
+#cardcontainer span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 1.2em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Pulsating animation */
+@keyframes pulsate {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#cardcontainer .pulsate {
+    animation: pulsate 1.5s infinite ease-in-out;
+}
+
+/* Add Notes from */
+#addnotes {
+    max-width: 450px;
+    margin: 0 auto;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+    transition: box-shadow 0.3s ease-in-out; /* Smooth transition for box shadow */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#addnotes:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); 
+}
+
+#addnotes .form-label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+#addnotes .form-control {
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease-in-out;
+}
+
+#addnotes .form-control:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+#addnotes .form-control:invalid {
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25%, 75% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+}
+
+#addnotes .btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+#addnotes .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    transform: scale(1.05); /* Pulsating effect on hover */
+}
+
+@media (max-width: 576px) {
+    #addnotes .form-control {
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (min-width: 576px) {
+    #addnotes {
+        padding: 1rem;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+    }
+}
+
+#addHead{
+    display: flex;
+    justify-content: center;
 }
