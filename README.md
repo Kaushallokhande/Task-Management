@@ -42,10 +42,10 @@ Welcome to iNotesBook, a full-stack web application for managing notes, contacts
 
 ## Screenshots
 
-![Home Page](/screenshots/home.png)
+![Home Page](public/home.png)
 *Description of the home page.*
 
-![Contact Page](/screenshots/contact.png)
+![Contact Page](public/contact.png)
 *Description of the contact page.*
 
 ## Setup Instructions
@@ -63,12 +63,12 @@ Welcome to iNotesBook, a full-stack web application for managing notes, contacts
    npm install
 
    # Install backend dependencies
-   cd ../server
+   cd ../backend
    npm install
    ```
 
 3. **Configure Environment Variables:**
-   - Create a `.env` file in the `server` directory and set your MongoDB connection string.
+   - Create a `.env` file in the `backend` directory and set your MongoDB connection string.
 
 4. **Run the Application:**
    - Start the frontend and backend separately.
@@ -76,8 +76,8 @@ Welcome to iNotesBook, a full-stack web application for managing notes, contacts
      # Start frontend (from the src directory)
      npm start
 
-     # Start backend (from the server directory)
-     npm start
+     # Start backend (from the backend directory)
+     node index.js
      ```
 
 5. **Open in Browser:**
@@ -96,4 +96,4 @@ Welcome to iNotesBook, a full-stack web application for managing notes, contacts
 
 ## Contact Information
 
-For any issues or inquiries, feel free to contact us at [your-email@example.com].
+For any issues or inquiries, feel free to contact us at [kaushallokhande3@gmail.com].
