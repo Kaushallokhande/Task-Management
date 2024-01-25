@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+# iNotesBook Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to iNotesBook, a full-stack web application for managing notes, contacts, and news. This project is built using React for the frontend and Node.js with Express for the backend.
 
-## Available Scripts
+## Project Structure
 
-In the project directory, you can run:
+```
+- src
+  - components
+    - Alertx.js
+    - Home.js
+    - About.js
+    - Login.js
+    - SignUp.js
+    - News.js
+    - Contact.js
+    - User.js
+    - NavBar.js
+  - context
+    - notes
+      - NoteState.js
+  - App.js
+  - App.css
+- server
+  - db.js
+  - routes
+    - auth.js
+    - notes.js
+    - contacts.js
+  - index.js
+```
 
-### `npm start`
+- **src**: Frontend React application.
+  - **components**: React components for different pages and UI elements.
+  - **context/notes**: Context for managing notes state.
+  - **App.js**: Main React application component.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **server**: Backend Node.js application.
+  - **db.js**: MongoDB connection setup.
+  - **routes**: Express routes for authentication, notes, and contacts.
+  - **index.js**: Backend server setup.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Screenshots
 
-### `npm test`
+![Home Page](public/home.png)
+*Description of the home page.*
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Contact Page](public/contact.png)
+*Description of the contact page.*
 
-### `npm run build`
+## Setup Instructions
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/your-username/iNotesBook.git
+   cd iNotesBook
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **Install Dependencies:**
+   ```bash
+   # Install frontend dependencies
+   cd src
+   npm install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   # Install backend dependencies
+   cd ../backend
+   npm install
+   ```
 
-### `npm run eject`
+3. **Configure Environment Variables:**
+   - Create a `.env` file in the `backend` directory and set your MongoDB connection string.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. **Run the Application:**
+   - Start the frontend and backend separately.
+     ```bash
+     # Start frontend (from the src directory)
+     npm start
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+     # Start backend (from the backend directory)
+     node index.js
+     ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+5. **Open in Browser:**
+   - Open your browser and visit [http://localhost:3000](http://localhost:3000) to access the application.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Additional Information
 
-## Learn More
+- **API Key for News:**
+  - You need to obtain a News API key and update it in `App.js` where `apikey` is defined.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Pagination:**
+  - The variable `pageSize` in `App.js` controls the number of items per page in the News component.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Country for News:**
+  - The variable `country` in `App.js` is set to 'in' (India) by default. Update it based on your preference.
 
-### Code Splitting
+## Contact Information
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For any issues or inquiries, feel free to contact us at [kaushallokhande3@gmail.com].
