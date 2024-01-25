@@ -21,7 +21,7 @@ Welcome to iNotesBook, a full-stack web application for managing notes, contacts
       - NoteState.js
   - App.js
   - App.css
-- server
+- backend
   - db.js
   - routes
     - auth.js
@@ -43,10 +43,24 @@ Welcome to iNotesBook, a full-stack web application for managing notes, contacts
 ## Screenshots
 
 ![Home Page](public/home.png)
-*Description of the home page.*
+*The home page showcasing CRUD operations and authentication.*
 
-![Contact Page](public/contact.png)
-*Description of the contact page.*
+## Features
+
+- **CRUD Operations for Notes:**
+  - The home page allows users to perform CRUD operations on notes.
+  - **Add Task:** Users can add new tasks to the list.
+  - **Delete:** Users can delete tasks.
+  - **Update and Edit:** Users can update and edit existing tasks.
+
+- **Authentication:**
+  - Users can authenticate by logging in.
+  - Logout functionality is available.
+  - If the user logs out, they need to log in again to revisit the application.
+
+- **Signup and MongoDB Integration:**
+  - New users can sign up, and their information is securely stored in MongoDB.
+  - MongoDB is used to store user data and notes information.
 
 ## Setup Instructions
 
