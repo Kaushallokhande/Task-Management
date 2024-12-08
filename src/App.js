@@ -7,7 +7,7 @@ import Alertx from './components/Alertx';
 const App = () => {
   const [alert, setAlert] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(true);
-
+  
   const showAlert = (msg, type) => {
     setAlert({ msg, type });
     setTimeout(() => {
