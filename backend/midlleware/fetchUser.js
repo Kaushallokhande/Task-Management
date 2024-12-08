@@ -11,6 +11,7 @@ const fetchUser = async(req, res, next) => {
         const data = await jwt.verify(token, JWT_SECRET)
         req.user = data.user;
         next();
+        
     } catch (error) {
         console.error(error.message);
         return res.status(401).send({ error: 'Please error with valid token' })

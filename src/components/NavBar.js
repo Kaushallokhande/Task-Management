@@ -26,13 +26,7 @@ const NavBar = () => {
                             <Link className={`nav-link ${location.pathname === '/' ? 'active' : ''}`} to="/">Home</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className={`nav-link ${location.pathname === '/newspaper' ? 'active' : ''}`} to="/newspaper">NewsPaper</Link>
-                                                    </li>
-                        <li className="nav-item">
                             <Link className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`} to="/contact">Contact</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`} to="/about">About</Link>
                         </li>
 
                     </ul>
@@ -40,7 +34,7 @@ const NavBar = () => {
                         <Link className="btn btn-primary mx-1" to="/login" role="button">Login</Link>
                         <Link className="btn btn-primary mx-1" to="/signup" role="button">Sign up</Link>
                     </form> : <form className="d-flex" role="search">
-                        <i class="fa-solid fa-user mx-3" style={{ color: "#ffffff", padding: '10px 0 0 0' }} onClick={handleUser}></i>
+                        <i className="fa-solid fa-user mx-3" style={{ color: "#ffffff", padding: '10px 0 0 0' }} onClick={handleUser}></i>
                         <button className="btn btn-primary mx-1" onClick={handleLogout}>Logout</button></form>}
                 </div>
             </div>

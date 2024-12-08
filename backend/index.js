@@ -18,13 +18,23 @@ const port = 5000
 
 
 const cors = require('cors')
-app.use(cors())
+app.use(cors(
+  {
+    origin: ["*"],
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"]
+  }
+)
+)
 
 app.use(express.json())
 //routes
 app.use('/api/auth', require('./routes/auth.js'))
 app.use('/api/notes', require('./routes/notes.js'))
 app.use('/api/contacts', require('./routes/contacts.js'))
+
+app.get("/health", (req, res) => {
+  res.send("Health OK");
+});
 
 app.listen(port, () => {
   console.log(`iNotesBook backend app listening on port ${port}`)
