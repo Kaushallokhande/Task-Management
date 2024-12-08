@@ -46,9 +46,11 @@
     0% {
         transform: scale(1);
     }
+
     50% {
         transform: scale(1.1);
     }
+
     100% {
         transform: scale(1);
     }
@@ -64,7 +66,8 @@
     margin: 0 auto;
     opacity: 0;
     animation: fadeIn 0.5s ease-in-out forwards;
-    transition: box-shadow 0.3s ease-in-out; /* Smooth transition for box shadow */
+    transition: box-shadow 0.3s ease-in-out;
+    /* Smooth transition for box shadow */
 }
 
 @keyframes fadeIn {
@@ -72,6 +75,7 @@
         opacity: 0;
         transform: translateY(-10px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -79,7 +83,7 @@
 }
 
 #addnotes:hover {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 #addnotes .form-label {
@@ -108,12 +112,17 @@
 }
 
 @keyframes shake {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateX(0);
     }
-    25%, 75% {
+
+    25%,
+    75% {
         transform: translateX(-5px);
     }
+
     50% {
         transform: translateX(5px);
     }
@@ -133,7 +142,8 @@
 #addnotes .btn-primary:hover {
     background-color: #0056b3;
     border-color: #0056b3;
-    transform: scale(1.05); /* Pulsating effect on hover */
+    transform: scale(1.05);
+    /* Pulsating effect on hover */
 }
 
 @media (max-width: 576px) {
@@ -150,7 +160,49 @@
     }
 }
 
-#addHead{
+#addHead {
     display: flex;
     justify-content: center;
+}
+
+/* Logout Button */
+.logout-container {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.logout-btn {
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 15px;
+    color: rgb(11, 11, 11);
+}
+
+.logout-btn:hover {
+    background-color: #575757;
+}
+
+/* Sign Up Button */
+.signup-container {
+    position: fixed;
+    top: 15px;
+    right: 20px;  
+    z-index: 1000;
+}
+
+.signup-btn {
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 15px;
+    color: rgb(11, 11, 11);
+}
+
+.signup-btn:hover {
+    background-color: #575757;
 }

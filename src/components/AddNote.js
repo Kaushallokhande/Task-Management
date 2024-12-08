@@ -1,41 +1,78 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState } from 'react';
 import noteContext from '../context/notes/noteContext';
+import { useOutletContext } from 'react-router-dom';
 
-const AddNote = (props) => {
-  const context = useContext(noteContext)
+const AddNote = () => {
+  const context = useContext(noteContext);
   const { addNote } = context;
-  const [note, setNote] = useState({ title: "", description: "", tag: "" })
+  const { showAlert } = useOutletContext(); // Access showAlert from Outlet context
 
-  const onHandle = (e) => {
-    e.preventDefault(); //use to stop reload when btn click
-    addNote(note.title, note.description, note.tag)
-    setNote({ title: "", description: "", tag: "" })
-    props.showAlert("Added new note successfully", "success")
-  }
+  const [note, setNote] = useState({ title: "", description: "", tag: "" });
+
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Prevent form reload
+    addNote(note.title, note.description, note.tag);
+    setNote({ title: "", description: "", tag: "" });
+    showAlert("Added new note successfully", "success");
+  };
+
   const onChange = (e) => {
-    setNote({ ...note, [e.target.name]: e.target.value })
-  }
+    setNote({ ...note, [e.target.name]: e.target.value });
+  };
 
   return (
-    <div className='container my-3'>
-      <h2 id='addHead'>Add Notes</h2>
-      <form id='addnotes'>
+    <div className="container my-3">
+      <h2 id="addHead">Add Notes</h2>
+      <form id="addnotes" onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="title" className="form-label">Title</label>
-          <input type="text" className="form-control" id="title" name='title' aria-describedby="emailHelp" value={note.title} onChange={onChange} minLength={3} required/>
+          <input
+            type="text"
+            className="form-control"
+            id="title"
+            name="title"
+            value={note.title}
+            onChange={onChange}
+            minLength={3}
+            required
+          />
         </div>
         <div className="mb-3">
           <label htmlFor="description" className="form-label">Description</label>
-          <input type="text" className="form-control" id="description" name="description" value={note.description} onChange={onChange} minLength={5} required/>
+          <input
+            type="text"
+            className="form-control"
+            id="description"
+            name="description"
+            value={note.description}
+            onChange={onChange}
+            minLength={5}
+            required
+          />
         </div>
         <div className="mb-3">
           <label htmlFor="tag" className="form-label">Tag</label>
-          <input type="text" className="form-control" id="tag" name="tag" value={note.tag} onChange={onChange} minLength={3} required/>
+          <input
+            type="text"
+            className="form-control"
+            id="tag"
+            name="tag"
+            value={note.tag}
+            onChange={onChange}
+            minLength={3}
+            required
+          />
         </div>
-        <button disabled= {note.title.length < 4 || note.description < 6 || note.tag.length < 4} type="submit" className="btn btn-primary" onClick={onHandle}>Add Note</button>
+        <button
+          disabled={note.title.length < 3 || note.description.length < 5 || note.tag.length < 3}
+          type="submit"
+          className="btn btn-primary"
+        >
+          Add Note
+        </button>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default AddNote
+export default AddNote;
