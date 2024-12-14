@@ -82,9 +82,7 @@
     }
 }
 
-#addnotes:hover {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
+
 
 #addnotes .form-label {
     font-weight: bold;
@@ -205,4 +203,36 @@
 
 .signup-btn:hover {
     background-color: #575757;
+}
+
+/* Add this CSS for the loading overlay */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(0, 0, 0, 0.2);
+    border-top: 5px solid #007bff; /* Primary color */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
